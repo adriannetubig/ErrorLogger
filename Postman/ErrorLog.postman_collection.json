@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "3d31799f-6cd4-4a70-9427-cf205c7e6ec3",
+		"name": "ErrorLog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"StackTrace\": \"StackTrace\",\n\t\"Source\": \"Source\",\n\t\"Message\": \"Message\",\n\t\"HResult\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:52134/ExceptionLogs/Applicatiom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52134",
+					"path": [
+						"ExceptionLogs",
+						"Applicatiom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:52134/ExceptionLogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52134",
+					"path": [
+						"ExceptionLogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create With Inner Exception",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"StackTrace\": \"StackTrace\",\n\t\"Source\": \"Source\",\n\t\"Message\": \"Message\",\n\t\"HResult\": 1,\n\t\"InnerException\": {\n\t\t\"StackTrace\": \"StackTrace\",\n\t\t\"Source\": \"Source\",\n\t\t\"Message\": \"Message\",\n\t\t\"HResult\": 1\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:52134/ExceptionLogs/Applicatiom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52134",
+					"path": [
+						"ExceptionLogs",
+						"Applicatiom"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
